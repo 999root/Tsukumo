@@ -1,2 +1,4 @@
 Flask
 werkzeug
+gunicorn
+flask_limiter

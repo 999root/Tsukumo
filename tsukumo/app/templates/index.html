@@ -40,35 +40,46 @@
     <div class="container">
         <h1>Package Manager</h1>
 
-        <!-- Upload .tar.gz File -->
         <h2>Upload a .tar.gz Package</h2>
-        <form action="/packages" method="POST" enctype="multipart/form-data">
+        <form action="/api/packages" method="POST" enctype="multipart/form-data">
             <label for="file">Choose a package file (.tar.gz):</label>
             <input type="file" name="file" id="file" required>
             <button type="submit" class="button">Upload .tar.gz Package</button>
         </form>
 
-        <!-- Upload Multiple Files -->
         <h2>Upload Multiple Files (To be Compiled into .tar.gz)</h2>
-        <form action="/compile" method="POST" enctype="multipart/form-data">
+        <form action="/api/compile" method="POST" enctype="multipart/form-data">
             <label for="files">Choose multiple files:</label>
             <input type="file" name="files" id="files" multiple required>
             <button type="submit" class="button">Upload and Compile into .tar.gz</button>
         </form>
 
-        <!-- List Available Packages -->
         <h2>Available Packages</h2>
         <div class="package-list">
             {% for package in packages %}
             <div class="package-item">
                 <strong>{{ package }}</strong>
-                <a href="/packages/{{ package }}" class="button">Download</a>
-                <form action="/packages/{{ package }}" method="POST" style="display:inline;">
-                    <button type="submit" class="button button-danger" formaction="/packages/{{ package }}" formmethod="DELETE">Delete</button>
-                </form>
+                <a href="/api/packages/{{ package }}" class="button">Download</a>
+                <button class="button button-danger" onclick="deletePackage('{{ package }}')">Delete</button>
             </div>
             {% endfor %}
         </div>
     </div>
+
+    <script>
+        function deletePackage(packageName) {
+            fetch(`/api/packages/${packageName}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message || data.error);
+                if (data.message) {
+                    window.location.reload();
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
 </body>
 </html>
