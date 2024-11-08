@@ -1,0 +1,7 @@
+services:
+  ricelib:
+    container_name: rice
+    build:
+      context: ./tsukumo
+    ports:
+      - "8080:5000"

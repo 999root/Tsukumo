@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .package-list {
+            margin-top: 20px;
+        }
+        .package-item {
+            margin-bottom: 10px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button-danger {
+            background-color: #f44336;
+        }
+        .button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Package Manager</h1>
+
+        <!-- Upload .tar.gz File -->
+        <h2>Upload a .tar.gz Package</h2>
+        <form action="/packages" method="POST" enctype="multipart/form-data">
+            <label for="file">Choose a package file (.tar.gz):</label>
+            <input type="file" name="file" id="file" required>
+            <button type="submit" class="button">Upload .tar.gz Package</button>
+        </form>
+
+        <!-- Upload Multiple Files -->
+        <h2>Upload Multiple Files (To be Compiled into .tar.gz)</h2>
+        <form action="/compile" method="POST" enctype="multipart/form-data">
+            <label for="files">Choose multiple files:</label>
+            <input type="file" name="files" id="files" multiple required>
+            <button type="submit" class="button">Upload and Compile into .tar.gz</button>
+        </form>
+
+        <!-- List Available Packages -->
+        <h2>Available Packages</h2>
+        <div class="package-list">
+            {% for package in packages %}
+            <div class="package-item">
+                <strong>{{ package }}</strong>
+                <a href="/packages/{{ package }}" class="button">Download</a>
+                <form action="/packages/{{ package }}" method="POST" style="display:inline;">
+                    <button type="submit" class="button button-danger" formaction="/packages/{{ package }}" formmethod="DELETE">Delete</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
