@@ -27,10 +27,10 @@ To get started with Tsukumo, you can install it directly by cloning the reposito
 
 ### Clone the repository
 
-***
-git clone https://github.com/your-username/tsukumo-client.git
+```bash
+git clone https://github.com/999root/Tsukumo.git
 cd tsukumo-client
-***
+```
 
 ### Install dependencies
 
