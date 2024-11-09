@@ -1,6 +1,6 @@
 services:
-  ricelib:
-    container_name: rice
+  tsu:
+    container_name: tsukumo
     build:
       context: ./tsukumo
     ports:
