@@ -16,6 +16,15 @@ With its adaptability and simplicity, Tsukumo is designed to be the go-to soluti
 
 ---
 
+## Warning
+
+⚠️ **Early Stages of Development** ⚠️
+
+Please note that Tsukumo is in the **early stages of development** and is **bare-bones** at the moment. It is **not** suitable for production environments or serious use at this time. We recommend using it **only for learning** or **experimental** purposes. Features are still being developed, and the project is not yet stable. Use at your own risk!
+
+---
+
+
 ## Branches
 
 ### [Server Branch](https://github.com/your-username/tsukumo/tree/Server)
