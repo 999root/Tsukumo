@@ -13,3 +13,19 @@ Tsukumo is an open-source package manager designed to help developers streamline
 - **Open Source & Community-Driven**: Tsukumo is open source, allowing developers to contribute, extend, and tailor the manager for a wide range of use cases.
 
 With its adaptability and simplicity, Tsukumo is designed to be the go-to solution for managing dependencies in any web development environment.
+
+---
+
+## Branches
+
+### [Server Branch](https://github.com/your-username/tsukumo/tree/Server)
+
+The **Server** branch contains the backend package manager logic and server-side components for handling package storage, management, and client interactions. This branch is crucial for setting up and maintaining the remote repository for the Tsukumo package manager.
+
+### [Client Branch](https://github.com/your-username/tsukumo/tree/Client)
+
+The **Client** branch contains the client-side package manager, which handles the downloading, installation, and management of packages from the server-side repository. This branch is designed for local package management and is meant for developers who want to use Tsukumo to manage their own packages on their local machines.
+
+---
+
+With Tsukumo's separation into **Server** and **Client** branches, you can manage and deploy both the backend and frontend of your package management system independently.
