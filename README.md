@@ -27,11 +27,11 @@ Please note that Tsukumo is in the **early stages of development** and is **bare
 
 ## Branches
 
-### [Server Branch](https://github.com/your-username/tsukumo/tree/Server)
+### [Server Branch](https://github.com/999root/Tsukumo/tree/Server)
 
 The **Server** branch contains the backend package manager logic and server-side components for handling package storage, management, and client interactions. This branch is crucial for setting up and maintaining the remote repository for the Tsukumo package manager.
 
-### [Client Branch](https://github.com/your-username/tsukumo/tree/Client)
+### [Client Branch](https://github.com/999root/Tsukumo/tree/Client)
 
 The **Client** branch contains the client-side package manager, which handles the downloading, installation, and management of packages from the server-side repository. This branch is designed for local package management and is meant for developers who want to use Tsukumo to manage their own packages on their local machines.
 
