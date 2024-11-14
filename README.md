@@ -37,4 +37,30 @@ The **Client** branch contains the client-side package manager, which handles th
 
 ---
 
+# Cloning Specific Branches
+
+To set up Tsukumo's **Server** and **Client** components on your local machine, you'll need to clone each branch individually.
+
+## Step 1: Clone the Server Branch
+
+Open your terminal and run the following command to clone the **Server** branch:
+
+```bash
+git clone -b Server https://github.com/999root/Tsukumo.git Tsukumo-Server
+```
+
+This command will clone only the **Server** branch into a directory named `Tsukumo-Server`. You can change the directory name if desired.
+
+## Step 2: Clone the Client Branch
+
+Similarly, to clone the **Client** branch, run:
+
+```bash
+git clone -b Client https://github.com/999root/Tsukumo.git Tsukumo-Client
+```
+
+This will create a separate directory named `Tsukumo-Client` with the **Client** branch code.
+
+---
+
 With Tsukumo's separation into **Server** and **Client** branches, you can manage and deploy both the backend and frontend of your package management system independently.
